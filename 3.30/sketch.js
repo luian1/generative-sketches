@@ -11,10 +11,10 @@ function setup() {
   colorMode(HSB);
 }
 
-function draw() { //wip
+function draw() { 
   frameRate(60);
   off++;
-  background(220, 100, 30);
+  background(0, 0, 0);
   var tSize = 100;
   var max = floor(1000/tSize);
   textAlign(CENTER);
@@ -22,9 +22,10 @@ function draw() { //wip
   textFont(font1);
   for(var j = 0; j <= 20; j++) {
     for(var i = 0; i <= 20; i++) {
-      fill(240+i*5, 200, 100);
-      text("L", 20+(i*48.9), -820+(45.5*i)+(90*j));
-      //text("L", 962-(i*50), 90+50*i);
+      fill(260+i*4, 200, 50);
+      text("L", 28+(i*48.9), -823+(45.5*i)+(90*j));
+      fill(260+i*4, 200, 100);
+      text("L", 0+(i*48.9), -823+(45.5*i)+(90*j));
     }
   }
   if (off >= 2552) {
