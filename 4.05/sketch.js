@@ -12,25 +12,39 @@ function setup() {
   background(0, 0, 0);
   var tSize = 1133;
   var max = 1000/tSize;
-  var x = 1; y = 1; reps = 10; mult = 1.02;
+  var x = 1; y = 1; reps = 10; mult = 1.02; xx = 0; yy = 0;
   textSize(tSize*1.2);
   textFont(font1); 
 
-  for(var rep = 0; rep <= reps; rep++) {
-    x/=mult;
+  for(var sus = 0; sus <= 1; sus++) {
+    for(var rep1 = 0; rep1 <= reps; rep1++) {
+      x/=mult;
+    }
+    for(var rep = 0; rep <= reps+1; rep++) {
+      fill(335, 100, 60+rep*(40/reps));
+      L(x, -x, xx, yy);
+      altL(x, x, xx, yy);
+      x*=mult;
+    }
+    x*=-0.58;
+    xx-=345;
+    yy+=345;
   }
-
-  for(var rep = 0; rep <= reps+1; rep++) {
-    fill(335, 100, 60+rep*(40/reps));
-    L(x, -x, 0, 0);
-    altL(x, x, 0, 0);
-    L(x*0.435, -x*0.435, 0, 0);
-    altL(x*0.435, x*0.435, 0, 0);
-    L(-x*0.6, x*0.6, -334, 334);
-    altL(-x*0.6, -x*0.6, -334, 334);
-    L(-x*0.261, x*0.261, -740, 740);
-    altL(-x*0.261, -x*0.261, -740, 740);
-    x*=mult;
+  
+  x = 1; xx = 0; yy = 0;
+  for(var sus = 0; sus <= 1; sus++) {
+    for(var rep1 = 0; rep1 <= reps; rep1++) {
+      x/=mult;
+    }
+    for(var rep = 0; rep <= reps+1; rep++) {
+      fill(335, 100, 60+rep*(40/reps));
+      L(x*0.435, -x*0.435, xx*2.3, yy*2.3);
+      altL(x*0.435, x*0.435, xx*2.3, yy*2.3);
+      x*=mult;
+    }
+    x*=-0.58;
+    xx-=345;
+    yy+=345;
   }
 
 }
